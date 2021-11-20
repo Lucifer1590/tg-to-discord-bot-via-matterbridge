@@ -3,16 +3,16 @@ from pyrogram import Client
 from pyrogram import filters
 
 # ~~~~~~ CONFIG ~~~~~~~~ #
-ACCOUNT = "@TestingGuy"
-PHONE_NR = '+918987772892'
+ACCOUNT = "@{your username}"
+PHONE_NR = '+91{your telegram linked number}'
 
 # https://my.telegram.org/auth?to=apps
-API_ID = 10361737 
-API_HASH = "0cab51c2877113d5874c7bbaaf3252f6"
+API_ID = {Telegram app API ID} 
+API_HASH = "{TELEGRAM APP API HASH}"
 
 # CHAT ID
-SOURCE_CHAT = -1001402869192 
-TARGET_CHAT = -795979744
+SOURCE_CHAT = {CHAT ID FROM WHERE WANNA COPY} 
+TARGET_CHAT = {CHAT ID OF THE GROUP WHERE U WANNA PASTE THE MESSAGES}
 # ~~~~~~~~~~~~~~~~~~~~~~ #
 
 app = Client(
@@ -29,13 +29,9 @@ def my_handler(client, message):
         chat_id=TARGET_CHAT,  # the channel you want to post to
         caption="Copied from XYZ"  # Caption
     )
-
+# UNCOMMENT THIS CODE TO FIND OUT CHAT ID OF THE PRIVATE GROUPS 
 #@app.on_message()
 #def my_handler(client, message):
 #    print(message)
-
-#def getAllChatIDs():
-#    for x in app.get_dialogs():
-#        print (x.chat.type, x.chat.title, x.chat.id)
 
 app.run()
