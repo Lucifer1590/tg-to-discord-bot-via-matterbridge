@@ -1,0 +1,57 @@
+[telegram.mytelegram]
+#See https://core.telegram.org/bots#6-botfather 
+#and https://www.linkedin.com/pulse/telegram-bots-beginners-marco-frau
+Token="2100824195:AAEDxuA3QPHLjStd-UbSWY9glAG3Gg_y6NU"
+RemoteNickFormat="({PROTOCOL})"
+MessageFormat="HTML"
+
+[discord.mydiscord]
+# You can get your token by following the instructions on
+# https://github.com/42wim/matterbridge/wiki/Discord-bot-setup
+# in particular that the "Members Intent" checkbox is important.
+# If you want roles/groups mentions to be shown with names instead of ID, 
+# you'll need to give your bot the "Manage Roles" permission.
+Token="OTExNTYxOTYxODI3ODkzMzI4.YZjMOw.SuzHUL-eOWZcufRDQGiP_A1CuRs"
+
+Server="849347734800433152" # picked from guilds the bot is connected to
+
+#RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+
+[whatsapp.mywhatsapp]
+# Number you will use as a relay bot. Tip: Get some disposable sim card, don't rely on 
+# your own number.
+Number="+918987772892"
+
+# First time that you login you will need to scan QR code, then credentials will be saved in 
+# a session file. 
+# If you won't set SessionFile then you will need to scan QR code on every restart.
+# optional (by default the session is stored only in memory, till restarting matterbridge)
+SessionFile="session-48111222334.gob"
+
+# If your terminal is white we need to invert QR code in order for it to be scanned properly
+# optional (default false)
+QrOnWhiteTerminal=false
+
+# Messages will be seen by other WhatsApp contacts as coming from the bridge. 
+# Original nick will be part of the message.
+RemoteNickFormat="[{PROTOCOL}] @{NICK}: "
+
+[[gateway]]
+name="gateway1"
+enable=true
+
+[[gateway.in]]
+account="telegram.mytelegram"
+channel="-795979744"
+
+[[gateway.out]]
+account="discord.mydiscord"
+channel="ID:911550729364320277"
+
+[[gateway.out]]
+account="telegram.mytelegram"
+channel="-550332763"
+
+#[[gateway.out]]
+#account="whatsapp.mywhatsapp"
+#channel="120363019152629779@g.us"
