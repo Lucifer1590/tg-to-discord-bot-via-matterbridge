@@ -1,7 +1,8 @@
 [telegram.mytelegram]
 #See https://core.telegram.org/bots#6-botfather 
 #and https://www.linkedin.com/pulse/telegram-bots-beginners-marco-frau
-Token="2100824195:AAEDxuA3QPHLjStd-UbSWY9glAG3Gg_y6NU"
+Token="{telegram bot token}"
+#dont edit line just below this
 RemoteNickFormat="({PROTOCOL})"
 MessageFormat="HTML"
 
@@ -11,16 +12,16 @@ MessageFormat="HTML"
 # in particular that the "Members Intent" checkbox is important.
 # If you want roles/groups mentions to be shown with names instead of ID, 
 # you'll need to give your bot the "Manage Roles" permission.
-Token="OTExNTYxOTYxODI3ODkzMzI4.YZjMOw.SuzHUL-eOWZcufRDQGiP_A1CuRs"
+Token="{your discord bot token}"
 
-Server="849347734800433152" # picked from guilds the bot is connected to
+Server="{server id}" # picked from guilds the bot is connected to
 
 #RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 
 [whatsapp.mywhatsapp]
 # Number you will use as a relay bot. Tip: Get some disposable sim card, don't rely on 
 # your own number.
-Number="+918987772892"
+Number="+91"
 
 # First time that you login you will need to scan QR code, then credentials will be saved in 
 # a session file. 
@@ -42,16 +43,9 @@ enable=true
 
 [[gateway.in]]
 account="telegram.mytelegram"
-channel="-795979744"
+channel="{chat id}"
 
 [[gateway.out]]
 account="discord.mydiscord"
-channel="ID:911550729364320277"
+channel="ID:{CHANNEL ID OF YOUR DISCORD}"
 
-[[gateway.out]]
-account="telegram.mytelegram"
-channel="-550332763"
-
-#[[gateway.out]]
-#account="whatsapp.mywhatsapp"
-#channel="120363019152629779@g.us"
